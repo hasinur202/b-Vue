@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div id="app">
+			
+		<!-- 	<input type="text" v-model='km'>
+			<input type="text" v-model='m'> -->
+			<input type="text" v-model='fullName'>
+			<h3>{{ firstName }}</h3>
+			<h3>{{ lastName }}</h3>
+
+
+
+
+		</div>
+	</div>
+
+
+	<script>
+		new Vue ({
+			el: '#app',
+			data:{
+				message:'This is Hasins',
+				km:0,
+				m:0,
+				firstName : 'Hasin',
+				lastName : 'Arayn'
+			},
+
+			methods:{
+				// reverse:function(){
+				// 	return this.message.split('').reverse().join('');
+				// }
+
+
+				
+			},
+
+			computed:{
+				// reverse:function(){
+				// 	return this.message.split('').reverse().join('');
+				// }
+
+				fullName:{
+					get: function(){
+						return this.firstName + ' '+this.lastName;
+					},
+
+					set: function(name){
+						var name = name.split(' ');
+						this.firstName = name[0];
+						this.lastName = name[name.length-1];
+					}
+
+				}
+
+			},
+
+			watch:{
+				km:function(val){
+					this.km=val;
+					this.m=val*1000;
+				},
+
+				m:function(val){
+					this.km = val / 1000;
+					this.m = val;
+				}
+			}
+
+
+
+
+
+		});
+	</script>
+
+
+</body>
+</html>

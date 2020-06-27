@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div id="app">
+			<br>
+
+			<h4 :style="styleSection" :title='title'>Speed of Sound</h4>	
+			
+			<h3 :class="{'alert alert-success': isActive,'col-lg-6':isMin}">Speed of Light</h3>	
+
+			<h3 :class="[ isActive ? 'alert alert-success':'alert alert-danger']">Speed of Universe</h3>
+
+
+		</div>
+	</div>
+
+
+	<script>
+		new Vue ({
+			el: '#app',
+			data:{
+				styleSection:{
+					color:'red',
+					border:'2px solid black',
+				},
+				title: 'This is the best title in the world',
+
+				className:'alert alert-success',
+				isActive: true,
+				isMin:true,
+			}
+			
+
+
+
+
+
+		});
+	</script>
+
+
+</body>
+</html>

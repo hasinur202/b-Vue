@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div id="app">
+			<br>
+
+			<div v-if='show == show1'>Microsoft</div>
+			<!-- <div v-else-if='show1'>Facebook</div>
+			<div v-else='show'>Google</div> -->
+
+			<br>
+
+			<div class="form-group col-lg-6">
+				<input type="text" class="form-control" v-model="text">
+			</div>
+
+			<div class="form-group col-lg-6">
+				<button class="btn btn-success" v-on:click='find'>Show this</button>
+			</div>
+
+			<div class="form-group col-lg-6">
+				<ol>
+					<li v-for='user in users' v-if='user.name == value || user.email == value'><h4>{{ user.name }}</h4></li>
+				</ol>
+			</div>
+
+
+
+
+		</div>
+	</div>
+
+
+
+	<script>
+		new Vue ({
+			el: '#app',
+			data:{
+				users:[
+					{name:'Hasin', email:'hasin@gmail.com'},
+
+					{name:'Aryan', email:'aryan@gmail.com'},
+				],
+
+				show:true,
+				show1:true,
+
+				text:'',
+				value:'',
+
+			},
+
+			methods:{
+				find:function(){
+					this.value = this.text
+				}
+			}
+		
+
+
+		});
+	</script>
+
+
+</body>
+</html>

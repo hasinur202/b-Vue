@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+	
+</head>
+<body>
+	<br>
+	<div class="container" id="app">
+		<btn @button_clicked='launchModal'></btn>
+		
+	
+
+		<modal :active='activateModal' @close_modal='close'>
+			Learning Vue
+
+			<template slot='section'>This is learning vue tutorial. It's very nice. It's very nice. It's very nice.</template>
+
+		</modal>
+
+	</div>
+	
+
+
+
+<script src="vue.js"></script>
+
+</body>
+</html>

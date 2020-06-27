@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div id="app">
+			<!-- First -->
+			<h1>{{ message }}</h1>
+			<!-- Second -->
+			<h1 v-bind:class='className'>{{ message }}</h1>
+			<!-- Third -->
+			<h2 v-if='show'>Third Element</h2>
+			<!-- Fourth -->
+			<ol v-show='visible'>
+				<li v-for='list in lists'>{{ list }}</li>
+			</ol>
+
+			<!-- Fifth -->
+			<ul>
+				<li v-for='list in lists1'>{{ list.social }}</li>
+			</ul>
+			<!-- Six -->
+			<input class="form-control" type="text" v-model='message'>
+
+			<!-- seven -->
+			<button v-on:Click='enableList'>Show Lists</button>
+
+
+
+		</div>
+	</div>
+
+
+	<script>
+		new Vue ({
+			el : '#app',
+			data: {
+				message: "This is Vue Series on Hasins",
+				className : 'alert alert-danger',
+				show: false,
+				lists: ['Hasin','Aryan','Facebook','Youtube'],
+				lists1: [
+					{name:'Hasin'},
+					{name:'Aryan'},
+					{name:'Facebook'},
+					{social:'Youtube'}
+				],
+				visible: false,
+			},
+			methods:{
+				enableList : function(){
+					this.visible=true;
+
+				}
+			}
+		});
+	</script>
+
+
+</body>
+</html>
